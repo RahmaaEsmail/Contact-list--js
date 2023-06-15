@@ -49,25 +49,28 @@ const addData = (e) => {
     nameList.push(userData);
     createElements(userData.name, userData.phone, id)
     storeData(nameList)
+    resetInput()
 };
 
 const storeData = (nameList) => {
     localStorage.setItem('dataList', JSON.stringify(nameList))
 }
 
-const displayStoredData = (nameList) => {
+const getStoredData = () => {
+    if (localStorage.getItem('dataList') != null)
+        return JSON.parse(localStorage.getItem('dataList'))
+}
+
+const init = () => {
+    const data = getStoredData()
+    displayItems(data)
+}
+
+const displayItems = (nameList) => {
     nameList.forEach(ele => {
         createElements(ele.name, ele.phone, ele.id)
     })
 }
-
-const getStoredData = () => {
-    if (localStorage.getItem('dataList') != null)
-        nameList = JSON.parse(localStorage.getItem('dataList'))
-    displayStoredData(nameList)
-}
-getStoredData()
-
 
 const deletContact =(name,id,li)=> {
     nameList = nameList.filter(data => data.id !== id && data.name !== name)
@@ -75,6 +78,11 @@ const deletContact =(name,id,li)=> {
     li.remove()
 }
 
+const resetInput = ()=> {
+    searchNameInput.value = ''
+    searchPhoneInput.value = ''
+}
 
+init()
 
 form.addEventListener("submit", addData);
