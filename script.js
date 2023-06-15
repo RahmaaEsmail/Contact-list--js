@@ -57,8 +57,9 @@ const storeData = (nameList) => {
 }
 
 const getStoredData = () => {
-    if (localStorage.getItem('dataList') != null)
+    if (localStorage.getItem('dataList'))
         return JSON.parse(localStorage.getItem('dataList'))
+    return [];
 }
 
 const init = () => {
