@@ -4,7 +4,7 @@ const searchPhoneInput = document.querySelector("#tel-number");
 const addBtn = document.querySelector(".add-btn");
 const listContainer = document.querySelector("ul");
 const form = document.querySelector("form");
-let nameList = [];
+const nameList = [];
 
 const createElements = (name, phone, id) => {
     const li = document.createElement('li');
