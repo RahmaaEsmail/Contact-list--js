@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: 450px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+h1 {
+    padding: 1.4rem;
+    text-align: center;
+}
+
+.search-field-box {
+    background: linear-gradient(90deg, rgba(111, 177, 127, 1) 0%, rgba(154, 173, 89, 1) 100%);
+    padding: 1.2rem;
+    margin: 0 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+button {
+    padding: .5rem 2.8rem;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+
+.search-field-box input {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    outline: none;
+    border: 0;
+    padding: 0.7rem;
+    font-size: 1rem;
+}
+
+ul {
+    margin: 0 20px;
+    list-style-type: none;
+}
+
+ul li {
+    background-color: #313438;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.4rem;
+    color: white;
+    border-bottom: 1px solid #555;
+}
+
+.contact-info {
+    font-size: 1.2rem;
+}
+
+.contact-info h5 {
+    font-size: 2rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    font-weight: 200;
+    color: rgb(176, 175, 175);
+}
+
+ul p {
+    width: 70px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+    width: 50px;
+    height: 50px;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+ul p a:first-child svg{
+    color: red;
+}
+
+ul p a:last-child svg{
+    color: green;
+}
+
+@media (max-width:25em) {
+    .search-field-box {
+        padding: 1.4rem .8rem;
+    }
+
+    .search-field-box input {
+        padding: 0.2rem;
+    }
+}
+
+@media (max-width:19em) {
+    .search-field-box {
+        padding: 1.2rem .3rem;
+    }
+
+    .search-field-box svg {
+        width: 30px;
+        height: 30px;
+    }
+}
