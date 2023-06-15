@@ -4,7 +4,7 @@ const searchPhoneInput = document.querySelector("#tel-number");
 const addBtn = document.querySelector(".add-btn");
 const listContainer = document.querySelector("ul");
 const form = document.querySelector("form");
-const nameList = [];
+let nameList = [];
 
 const createElements = (name, phone, id) => {
     const li = document.createElement('li');
@@ -40,7 +40,7 @@ const createElements = (name, phone, id) => {
 
 const addData = (e) => {
     e.preventDefault();
-    const id = Math.floor(Date.now())
+    const id = (Date.now())
     const userData = {
         id: id,
         name: searchNameInput.value,
@@ -74,7 +74,7 @@ const displayItems = (nameList) => {
 }
 
 const deletContact =(name,id,li)=> {
-    nameList = nameList.filter(data => data.id !== id && data.name !== name)
+    nameList = nameList.filter(data => data.id !== id)
     localStorage.setItem('dataList', JSON.stringify(nameList))
     li.remove()
 }
@@ -83,6 +83,7 @@ const resetInput = ()=> {
     searchNameInput.value = ''
     searchPhoneInput.value = ''
 }
+
 
 init()
 
